@@ -16,6 +16,8 @@ gem 'bootstrap_sb_admin_base_v2'
 
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
