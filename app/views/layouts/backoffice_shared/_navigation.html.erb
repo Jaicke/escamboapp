@@ -12,6 +12,7 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+                <li><%= current_admin.email %></li>
                 
                 <!-- /.dropdown -->
                 <li class="dropdown">
@@ -19,11 +20,6 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
 
                         <li>
                         <%= link_to destroy_admin_session_path, method: :delete do %>
@@ -50,6 +46,11 @@
                         <li>
                             <%= link_to backoffice_categories_path do %>
                                 <i class="fa fa-th-list fa-fw"></i> Categorias
+                            <% end %>
+                        </li>
+                          <li>
+                            <%= link_to backoffice_admins_index_path do %>
+                                <i class="fa fa-users fa-fw"></i> Administradores
                             <% end %>
                         </li>
                         

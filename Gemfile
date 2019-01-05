@@ -14,9 +14,11 @@ gem 'devise-i18n'
 # Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/boots…
 gem 'bootstrap_sb_admin_base_v2'
 
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
-
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-notifyjs'
+  gem 'rails-assets-bootbox'
+end
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -60,6 +62,7 @@ group :development do
   # Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
   gem 'rails-erd'
 
+  gem 'faker'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
