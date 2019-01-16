@@ -13,11 +13,47 @@ gem 'devise'
 gem 'devise-i18n'
 # Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/boots…
 gem 'bootstrap_sb_admin_base_v2'
+# Integration of RubyMoney - Money with Rails
+gem 'money-rails'
+
+# Easy file attachment management for ActiveRecord
+gem 'paperclip', '~> 6.0.0'
+
+# translate enuns
+gem 'enum_help'
+
+# Minimal authorization through OO design and pure Ruby classes
+gem 'pundit'
+
+# Gem pra usar o fontawesome
+gem "font-awesome-rails"
+
+# The safe Markdown parser, reloaded.
+gem 'redcarpet'
+
+# Markdown Lorem Ipsum generator
+gem 'doctor_ipsum'
+
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
+gem 'friendly_id'
+
+# If Turbolinks are not enough for you. Wiselinks makes your application work faster.
+gem 'wiselinks'
+
+#  A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+
+# A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
+
+# Translations for the kaminari gem
+gem 'kaminari-i18n'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
-  gem 'rails-assets-notifyjs'
+  gem 'rails-assets-bootstrap.growl'
   gem 'rails-assets-bootbox'
+  gem 'rails-assets-animate-css'
 end
 
 # Use sqlite3 as the database for Active Record
@@ -33,8 +69,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -57,11 +92,14 @@ group :development, :test do
 end
 
 group :development do
+  # Catches mail and serves it through a dream. http://mailcatcher.me
+  gem 'mailcatcher'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
   gem 'rails-erd'
-
+  # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
+  gem 'lerolero_generator'
   gem 'faker'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

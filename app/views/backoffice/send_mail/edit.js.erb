@@ -1,0 +1,12 @@
+$(function(){
+    var modal = document.getElementById('sendMailModal')
+    $(modal).modal();
+    $('#recipient-text').val('<%= @admin.email %>');
+    $('h4.modal-title').text('Mensagem para <%= @admin.name %>');
+
+    $(modal).on('shown.bs.modal', function () {
+        $('#subject-text').focus();
+    });
+
+});
+

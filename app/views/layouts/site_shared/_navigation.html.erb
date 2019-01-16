@@ -1,26 +1,31 @@
 <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <div class="container">        
+        <%= link_to "EscamboApp", root_path, class:"navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
+          <% unless member_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Login", new_member_session_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <%= link_to "Cadastrar-se", new_member_registration_path, class:"nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">              
+              <%= link_to current_member.email, "#", class:"nav-link" %>
+            </li>
+            <li class="nav-item">              
+              <%= link_to "Perfil", site_profile_dashboard_index_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <%= link_to "Sair", destroy_member_session_path, method: :delete, class:"nav-link" %>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+          <% end %>
+            
           </ul>
         </div>
       </div>

@@ -1,16 +1,30 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Esqueceu sua senha?</h5>            
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <div class="form-label-group">                
+                 <%= f.email_field :email, autofocus: true, autocomplete: "email",  class:"form-control", placeholder:"Endereço de E-mail" %>                                      
+                 <%= f.label :email, html: { for:"inputEmail" } %>                  
+              </div>              
+              <%= f.submit "Envie-me instruções", class:"btn btn-lg btn-primary btn-block" %>
+              <hr class="my-4">
+              <%= render "members/shared/links" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
+  <% flash.each do |key, value|%>
+    <%= javascript_tag "$.notify({ message: '#{alert}' }, { type: 'danger', placement: { from: 'top', align: 'center'}});" %>   
 <% end %>
 
-<%= render "members/shared/links" %>
+<% unless devise_error_messages!.blank? %>
+    <% resource.errors.full_messages.each do |message| %>
+       <%= javascript_tag "$.notify({ message: '#{message}' }, { type: 'danger', placement: { from: 'top', align: 'center'}});" %>
+    <% end %>
+<% end %>  

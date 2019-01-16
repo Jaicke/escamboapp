@@ -10,11 +10,11 @@
 
     <title>EscamboApp</title>
     
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'site', media: 'all' %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'site', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
   
     <%= csrf_meta_tags %>
     
@@ -23,12 +23,58 @@
   </head>
 
   <body>
+    <div id="global-spin" style="display: none" class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
     <%= render partial: 'layouts/site_shared/navigation' %>
-    <%= yield %>
-    <%= render partial: 'layouts/site_shared/footer' %>
-
-
-  </body>
+      <!-- Page Content -->
+    <div class="container">
+    <%= form_tag site_search_path, method: :get do %>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3"></div>
+            
+            <div class="input-group col-md-6">
+              <%= text_field_tag(:q, params[:q] , {class:"form-control", placeholder:"Pesquisar...", aria: {label: "Recipient's username", describedly: "button-addon2"}} )%>
+              
+              <div class="input-group-append">               
+                <%= submit_tag("Pesquisar", class:"btn btn-outline-secondary", id:"button-addon2") %>
+                 
+              </div>
+            </div>
+            
+            <div class="col-md-3"></div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      
+      <div class="row">
+        <%= render partial: 'layouts/site_shared/sidebar' %>
+        <div id="home-detail" class="col-lg-9">
+          <% if controller_path == 'site/home' %>
+            <%= render partial: 'layouts/site_shared/carousel' %>     
+          <% end %>    
+          <div class="row">
+              <%= yield %>
+          </div>          
+        </div>
+        <!-- /.col-lg-9 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+   </body>
+       <%= render partial: 'layouts/shared/notifications' %>   
 
 </html>
 

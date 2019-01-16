@@ -1,0 +1,11 @@
+<% @ad.comments.each do |comment| %>
+
+        <div class="card-body">
+            <p class="card-text"><%= comment.body %></p>
+            <% if comment.member == current_member %>
+                <%= rating_for_user @ad, current_member, 'quality', disable_after_rate: false %>                
+            <% end %>
+            <small class="text-muted">Postado por <%= comment.member.email %> há <%= time_ago_in_words( comment.created_at) %></small>
+        </div>
+    
+<% end %>

@@ -1,4 +1,4 @@
-<h1 class="page-header">Categorias</h1>
+<h1 class="page-header"><%= @categories.model.model_name.human(count: @categories.count)%></h1>
     <div class="panel panel-default">
     <div class="panel-heading">
                             Listando categorias
@@ -13,7 +13,7 @@
                                     <thead>
                              <tr>
                                 <th>#</th>
-                                <th>Descrição</th>
+                                <th><%= @categories.model.human_attribute_name('description')%></th>
                                 <th></th>
                                             
                             </tr>
@@ -27,7 +27,7 @@
                                     <%= link_to edit_backoffice_category_path(category.id), class:"btn btn-primary btn-circle" do %>
                                         <i class="fa fa-edit"></i>
                                     <% end %>
-                                    <%= link_to new_backoffice_category_path, class:"btn btn-danger btn-circle", disabled: "true" do %>
+                                    <%= link_to '#', class:"btn btn-danger btn-circle", disabled: "true" do %>
                                         <i class="fa fa-minus"></i>
                                     <% end %> 
                                 </td>                                          
