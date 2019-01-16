@@ -46,6 +46,10 @@ gem 'kaminari'
 # A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
 gem 'ratyrate'
 
+# Biblioteca de integração em Ruby para o PagSeguro
+gem "pagseguro-oficial", "~> 2.5.0"
+
+
 # Translations for the kaminari gem
 gem 'kaminari-i18n'
 
@@ -89,6 +93,8 @@ group :development, :test do
   gem 'byebug'
   # Better error page for Rack apps
   gem "better_errors"
+  
+
 end
 
 group :development do
@@ -103,5 +109,7 @@ group :development do
   gem 'faker'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
+  gem 'rack-cors', require: 'rack/cors'
 end
 

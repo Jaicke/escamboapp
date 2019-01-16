@@ -37,6 +37,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    aitch (0.5.0)
+      nokogiri (>= 1.6.0)
     arel (6.0.4)
     bcrypt (3.1.12)
     better_errors (2.5.0)
@@ -150,6 +152,11 @@ GEM
     nokogiri (1.10.0)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pagseguro-oficial (2.5.0)
+      aitch (~> 0.2)
+      i18n (~> 0.7)
+      json (~> 1.8)
+      nokogiri (~> 1.6)
     paperclip (6.0.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -159,6 +166,7 @@ GEM
     pundit (2.0.0)
       activesupport (>= 3.0.0)
     rack (1.6.11)
+    rack-cors (1.0.2)
     rack-protection (1.5.5)
       rack
     rack-test (0.6.3)
@@ -290,8 +298,10 @@ DEPENDENCIES
   lerolero_generator
   mailcatcher
   money-rails
+  pagseguro-oficial (~> 2.5.0)
   paperclip (~> 6.0.0)
   pundit
+  rack-cors
   rails (= 4.2.5)
   rails-assets-animate-css!
   rails-assets-bootbox!

@@ -4,6 +4,18 @@
             <div class="card-body">
               <h3 class="card-title"><%= @ad.title %></h3>
               <h4><%= humanized_money_with_symbol @ad.price %></h4>
+              <% if @ad.active? %>
+                <% if member_signed_in? %> 
+                  <%= form_tag(checkout_payments_path) do |f| %>
+                    <%= hidden_field_tag(:ad_id, @ad.id) %>
+                    <%= submit_tag  "Comprar", class:"btn btn-success", data: { confirm: "Deseja realmente comprar esse produto?" } %>
+                  <% end %>
+                <% else %>
+                  <%= link_to  "Efetue login para comprar", new_member_session_path, class:"btn btn-success pull-right"  %>
+                <% end %>
+              <% else %>
+                <%= link_to  "#{@ad.status_i18n}", '#', class:"btn btn-success pull-right", disabled: true  %>
+              <% end %>
               <p class="card-text"><%= @ad.description.html_safe %></p>
               <%= rating_for @ad, 'quality' %>
               <p class="pull-right"><%= @ad.rates("quality").count %> Avaliações</p>
