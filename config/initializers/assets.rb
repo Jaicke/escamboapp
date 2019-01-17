@@ -11,4 +11,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( site/profile.js site.js backoffice.js )
 Rails.application.config.assets.precompile += %w( members/registrations.css devise/sessions.css devise/passwords.css 
-                                                  site/profile.css site.css backoffice.css )
+                                                  site/profile.css site.css backoffice.css 
+                                                  chart.js)

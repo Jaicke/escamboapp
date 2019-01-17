@@ -13,8 +13,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= stylesheet_link_tag    'backoffice', media: 'all' %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'backoffice' %>
+    <%= javascript_include_tag 'chart' %>    
     
     <%= csrf_meta_tags %>
 
@@ -53,6 +52,8 @@
 
 </body>
 
- <%= render partial: 'layouts/shared/notifications' %>   
+    <%= render partial: 'layouts/shared/notifications' %>  
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'backoffice' %> 
 </html>
 
