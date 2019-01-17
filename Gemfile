@@ -46,6 +46,10 @@ gem 'kaminari'
 # A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
 gem 'ratyrate'
 
+# Prawn Handler for Rails. Handles and registers pdf formats.
+gem 'prawn-rails'
+
+
 # Translations for the kaminari gem
 gem 'kaminari-i18n'
 
