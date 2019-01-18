@@ -49,6 +49,9 @@ gem 'ratyrate'
 # Translations for the kaminari gem
 gem 'kaminari-i18n'
 
+# Simple, efficient background processing for Ruby 
+gem 'sidekiq'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-bootstrap.growl'
